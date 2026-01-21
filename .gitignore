@@ -1,0 +1,9 @@
+@".vscode/
+*.code-workspace
+.DS_Store
+node_modules/
+dist/
+build/
+.env
+.env.local
+"@ | Set-Content -Path .gitignore

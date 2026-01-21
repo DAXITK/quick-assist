@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Autofill</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Quick Assist</h1>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="profile">Profile</button>
+      <button class="tab-btn" data-tab="history">History</button>
+      <button class="tab-btn" data-tab="settings">Settings</button>
+    </div>
+
+    <!-- Profile Tab -->
+    <div id="profile-tab" class="tab-content active">
+      <form id="profile-form">
+        <h3>Personal Information</h3>
+        <label>Full Name *</label>
+        <input type="text" id="fullName" required>
+        
+        <label>Email *</label>
+        <input type="email" id="email" required>
+        
+        <label>Phone</label>
+        <input type="tel" id="phone">
+        
+        <label>LinkedIn URL</label>
+        <input type="url" id="linkedin">
+        
+        <label>Portfolio/Website</label>
+        <input type="url" id="portfolio">
+        
+        <label>Location (City, State)</label>
+        <input type="text" id="location">
+
+        <h3>Work Experience</h3>
+        <label>Current/Most Recent Job Title</label>
+        <input type="text" id="currentTitle">
+        
+        <label>Current/Most Recent Company</label>
+        <input type="text" id="currentCompany">
+        
+        <label>Years of Experience</label>
+        <input type="number" id="yearsExperience" min="0">
+        
+        <label>Resume Summary (250 words)</label>
+        <textarea id="summary" rows="4" maxlength="1500"></textarea>
+
+        <h3>Education</h3>
+        <label>Highest Degree</label>
+        <select id="degree">
+          <option value="">Select...</option>
+          <option value="High School">High School</option>
+          <option value="Associate">Associate</option>
+          <option value="Bachelor's">Bachelor's</option>
+          <option value="Master's">Master's</option>
+          <option value="PhD">PhD</option>
+        </select>
+        
+        <label>Field of Study</label>
+        <input type="text" id="fieldOfStudy">
+        
+        <label>University/College</label>
+        <input type="text" id="university">
+        
+        <label>Graduation Year</label>
+        <input type="number" id="gradYear" min="1950" max="2030">
+
+        <h3>Skills & Additional Info</h3>
+        <label>Key Skills (comma-separated)</label>
+        <textarea id="skills" rows="2" placeholder="Python, JavaScript, React..."></textarea>
+        
+        <label>Cover Letter Template</label>
+        <textarea id="coverLetter" rows="6" placeholder="Use {{company}} and {{position}} as placeholders"></textarea>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Save Profile</button>
+          <button type="button" id="export-btn" class="btn-secondary">Export Data</button>
+        </div>
+      </form>
+
+      <div class="fill-section">
+        <h3>Autofill Current Page</h3>
+        <button id="autofill-btn" class="btn-fill">🚀 Fill Form</button>
+        <p class="hint">Navigate to a job application page and click to autofill</p>
+      </div>
+    </div>
+
+    <!-- History Tab -->
+    <div id="history-tab" class="tab-content">
+      <h3>Application History</h3>
+      <div class="stats">
+        <div class="stat-box">
+          <span class="stat-number" id="total-apps">0</span>
+          <span class="stat-label">Total Applications</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-number" id="this-week">0</span>
+          <span class="stat-label">This Week</span>
+        </div>
+      </div>
+      
+      <div class="history-controls">
+        <input type="text" id="search-history" placeholder="Search by company or position...">
+        <button id="export-history" class="btn-secondary">Export CSV</button>
+        <button id="clear-history" class="btn-danger">Clear All</button>
+      </div>
+      
+      <div id="history-list" class="history-list">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+
+    <!-- Settings Tab -->
+    <div id="settings-tab" class="tab-content">
+      <h3>Settings</h3>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="auto-track">
+          Automatically track filled applications
+        </label>
+      </div>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="confirm-fill">
+          Confirm before autofilling
+        </label>
+      </div>
+      
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="highlight-filled">
+          Highlight filled fields
+        </label>
+      </div>
+
+      <h4>Data Management</h4>
+      <button id="import-data" class="btn-secondary">Import Profile</button>
+      <input type="file" id="file-input" accept=".json" style="display:none">
+      
+      <h4>Danger Zone</h4>
+      <button id="delete-all" class="btn-danger">Delete All Data</button>
+    </div>
+
+    <div class="status" id="status"></div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
