@@ -367,3 +367,127 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Section fill buttons */
+.btn-fill-section {
+  background: #f8f9fa;
+  color: #1a73e8;
+  border: 2px dashed #1a73e8;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.btn-fill-section:hover {
+  background: #e8f0fe;
+  border-style: solid;
+}
+
+/* Experience and Education cards */
+.experience-card, .education-card {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-remove {
+  background: #f44336;
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.btn-remove:hover {
+  background: #d32f2f;
+}
+
+.btn-fill-card {
+  background: #1a73e8;
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.btn-fill-card:hover {
+  background: #1557b0;
+}
+
+.card-fields {
+  display: grid;
+  gap: 10px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.experience-card label,
+.education-card label {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.experience-card input,
+.experience-card select,
+.experience-card textarea,
+.education-card input,
+.education-card select,
+.education-card textarea {
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.checkbox-field input {
+  width: auto;
+  margin-right: 8px;
+}
+
+.checkbox-field label {
+  margin: 0;
+  font-weight: normal;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: #999;
+  font-size: 13px;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
